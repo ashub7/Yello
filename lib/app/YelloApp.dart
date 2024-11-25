@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class YelloApp extends StatefulWidget {
@@ -22,15 +20,25 @@ class _YelloAppState extends State<YelloApp> {
       fontPreference,
       ThemeData.light().textTheme,
     );
-
-    return ScreenUtilInit(
+    return SafeArea(
+      child: Scaffold(
+        body: Stack(
+          children: [Text("Hello data")],
+        ),
+      ),
+    );
+    /* return ScreenUtilInit(
       designSize: const Size(300, 300),
       minTextAdapt: true,
       child: MultiBlocProvider(
         providers: [],
-        child: MaterialApp.router(),
+        child: Stack(
+          children: [
+            Text("Hello data")
+          ],
+        ),
       ),
-    );
+    );*/
   }
 }
 
